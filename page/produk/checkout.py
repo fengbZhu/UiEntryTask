@@ -32,6 +32,14 @@ class Checkout(Pulsa):
         el = 'xpath=>//button[text()="Muat Ulang"]/../div[2]/div[2]/div[3]'
         self.d.click(el)
 
+    def getTargetImg(self):
+        el = 'xpath=>//div[text()="Verifikasi"]/../../div[2]/div/div/img'
+        return self.d.get_attribute(el, attribute='src')
+
+    def getImg(self):
+        el = 'xpath=>//div[text()="Verifikasi"]/../../div[2]/*/img'
+        return self.d.get_attribute(el, attribute='src')
+
 
 if __name__ == '__main__':
     page = Checkout()
@@ -58,14 +66,11 @@ if __name__ == '__main__':
     page.clickKonfirmasi()
     page.clickBayarSekarang()
     time.sleep(3)
-    src_big = page.d.get_attribute('xpath=>//div[text()="Verifikasi"]/../../div[2]/div/div/img', attribute='src')
-    src_small = page.d.get_attribute('xpath=>//div[text()="Verifikasi"]/../../div[2]/*/img', attribute='src')
-    tool.save_picture(src=src_big, name='beijingtu.jpg')
-    tool.save_picture(src=src_small, name='huakuai.jpg')
-    target = WEBPICTUREPATH + os.path.sep + 'beijingtu.jpg'
-    template = WEBPICTUREPATH + os.path.sep + 'huakuai.jpg'
+    src_big = page.getTargetImg()
+    src_small = page.getImg()
+    target = tool.save_picture(src=src_big, name='src_big.jpg')
+    template = tool.save_picture(src=src_small, name='src_small.jpg')
     distance = tool.findpic(target=target, template=template)
-    print(distance)
     page.d.move_by_distance('xpath=>//aside/div/div/div/div[2]/div[2]/div[3]', distance)
     time.sleep(2)
     page.d.F5()

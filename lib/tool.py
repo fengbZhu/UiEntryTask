@@ -28,6 +28,7 @@ class Tool(object):
         f = open(abs_img, "wb")  # 保存图片
         f.write(img_data)
         f.close()
+        return abs_img
 
     def findpic(self, target='background.png', template='slider.png'):
         """
