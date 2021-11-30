@@ -45,8 +45,8 @@ class Tool(object):
             distance = c[0]
         else:
             distance = d[0]
-        print(value)
-        print(distance)
+        # print(value)
+        # print(distance)
         return int(distance)
 
     def get_tracks(self, distance):
