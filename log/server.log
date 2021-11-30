@@ -1,0 +1,3 @@
+[2021-11-29 17:58:25,374] [DEBUG] [HTMLTestRunner.py:_generate_report:692] [('check11Telepon.jpg',)]
+[2021-11-29 17:59:22,461] [DEBUG] [HTMLTestRunner.py:_generate_report:692] [('check11Telepon.jpg',), ('test_02_11Telepon.jpg',)]
+[2021-11-29 18:03:02,210] [DEBUG] [HTMLTestRunner.py:_generate_report:692] [('test_02_11Telepon.jpg',)]

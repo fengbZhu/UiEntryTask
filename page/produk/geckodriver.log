@@ -1,0 +1,10 @@
+1638188615502	geckodriver	INFO	Listening on 127.0.0.1:53946
+1638188616534	mozprofile::profile	INFO	Using profile path /var/folders/lc/jns0zpvx22l_l9frpzqcczgm0000gq/T/rust_mozprofile.EoE2mvAZeRQp
+1638188616538	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin with args []
+1638188616549	geckodriver::marionette	INFO	Connecting to Marionette on localhost:53955
+[warn] kq_init: detected broken kqueue; not using.: Undefined error: 0
+1638188618431	Marionette	INFO	Listening on port 53955
+2021-11-29 20:23:38.547 firefox-bin[11234:373116] *** WARNING: Textured window <ToolbarWindow: 0x7feacafdafe0> is getting an implicitly transparent titlebar. This will break when linking against newer SDKs. Use NSWindow's -titlebarAppearsTransparent=YES instead.
+1638188619326	Marionette	INFO	startBrowser 2474b711-0f86-fc4f-835f-7ab612f45b4b
+[warn] kq_init: detected broken kqueue; not using.: Undefined error: 0
+2021-11-29 20:23:54.007 firefox-bin[11234:373116] TSM AdjustCapsLockLEDForKeyTransitionHandling - _ISSetPhysicalKeyboardCapsLockLED Inhibit
