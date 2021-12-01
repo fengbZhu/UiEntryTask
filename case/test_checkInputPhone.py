@@ -32,10 +32,6 @@ class CheckPhone(unittest.TestCase):
         self.page.inputTelepon('0812747311')
         self.assertTrue(self.page.check11Telepon(self.test_02_11Telepon.__name__), 'msg')
 
-    def test_02_PulsaSuccess(self):
-        # self.page.inputTelepon('0732481')
-        self.page.inputTelepon('0812747311')
-        self.assertTrue(self.page.check11Telepon(self.test_02_11Telepon.__name__), 'msg')
 
 
 

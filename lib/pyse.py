@@ -410,38 +410,37 @@ class Pyse(object):
         el = self.get_element(css)
         Select(el).select_by_value(value)
 
-    def move_by_distance(self, css, distance):
+    def move_by_distance(self, css, distance,times=1):
         self.element_wait(css)
         el = self.get_element(css)
-        action = ActionChains(self.driver)
-        # action.click_and_hold(el).perform()
-        # time.sleep(3)
-        # action.move_by_offset(xoffset=distance, yoffset=0).perform()
-        # time.sleep(1)
-        # action.release(el).perform()
-        trajectory = tool.get_tracks(distance + 4)
-        action.click_and_hold(el).perform()
-        for track in trajectory['plus']:
-            ActionChains(self.driver).move_by_offset(
-                xoffset=track,
-                yoffset=round(random.uniform(1.0, 3.0), 1)
-            ).perform()
-        time.sleep(0.5)
+        for i in range(times):
+            if el :
+                action = ActionChains(self.driver)
+                trajectory = tool.get_tracks(distance + 4)
+                action.click_and_hold(el).perform()
+                for track in trajectory['plus']:
+                    ActionChains(self.driver).move_by_offset(
+                        xoffset=track,
+                        yoffset=round(random.uniform(1.0, 3.0), 1)
+                    ).perform()
+                time.sleep(0.5)
 
-        for back_tracks in trajectory['reduce']:
-            ActionChains(self.driver).move_by_offset(
-                xoffset=back_tracks,
-                yoffset=round(random.uniform(1.0, 3.0), 1)
-            ).perform()
-        #
-        for i in [-4, 4]:
-            ActionChains(self.driver).move_by_offset(
-                xoffset=i,
-                yoffset=0
-            ).perform()
+                for back_tracks in trajectory['reduce']:
+                    ActionChains(self.driver).move_by_offset(
+                        xoffset=back_tracks,
+                        yoffset=round(random.uniform(1.0, 3.0), 1)
+                    ).perform()
+                #
+                for i in [-4, 4]:
+                    ActionChains(self.driver).move_by_offset(
+                        xoffset=i,
+                        yoffset=0
+                    ).perform()
 
-        time.sleep(0.1)
-        ActionChains(self.driver).release().perform()
+                time.sleep(0.1)
+                ActionChains(self.driver).release().perform()
+            else:
+                return
 
 
 if __name__ == '__main__':
