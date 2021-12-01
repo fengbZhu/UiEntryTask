@@ -1,7 +1,7 @@
 import unittest
 
 from conf.setting import CASEPATH, REPORTPATH
-from lib.tool import Tool
+from lib.tool import tool
 from lib.HTMLTestRunner import HTMLTestRunner
 
 
@@ -9,7 +9,7 @@ class Main(object):
     def run(self):
         suite = unittest.TestSuite()
         cases = unittest.defaultTestLoader.discover(CASEPATH)
-        Tool().clear_picture()
+        tool.clear_picture()
         for case in cases:
             suite.addTest(case)
         f =open(REPORTPATH,'wb')

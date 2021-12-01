@@ -410,11 +410,11 @@ class Pyse(object):
         el = self.get_element(css)
         Select(el).select_by_value(value)
 
-    def move_by_distance(self, css, distance,times=1):
+    def move_by_distance(self, css, distance, times=1):
         self.element_wait(css)
         el = self.get_element(css)
-        for i in range(times):
-            if el :
+        for i in range(0, times + 1):
+            if el:
                 action = ActionChains(self.driver)
                 trajectory = tool.get_tracks(distance + 4)
                 action.click_and_hold(el).perform()

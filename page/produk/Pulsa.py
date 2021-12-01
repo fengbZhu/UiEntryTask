@@ -34,7 +34,7 @@ class Pulsa(Login):
         return self.d.wait_and_save_exception(el, name)
 
     def check11Telepon(self,name):
-        el = 'xpath=>//p[text()="Mohon masukkan setidaknya 11 angka"]'
+        el = 'xpath=>//p[text()="Mohon masukkan setidaknya 11 angka11"]'
         return self.d.wait_and_save_exception(el, name)
 
 
