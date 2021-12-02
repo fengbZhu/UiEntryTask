@@ -9,21 +9,19 @@ from page.produk.checkout import Checkout
 
 class CheckPhone(unittest.TestCase):
 
-    @classmethod
-    def setUp(cls):
-        cls.page = Checkout()
-        cls.page.maxwindow()
-        cls.page.open()
-        cls.page.clickMasuk()
-        cls.page.inputAccout()
-        cls.page.inputPasswd()
+    def setUp(self):
+        self.page = Checkout()
+        self.page.maxwindow()
+        self.page.open()
+        self.page.clickMasuk()
+        self.page.inputAccout()
+        self.page.inputPasswd()
         time.sleep(1)
-        cls.page.clickLogin()
+        self.page.clickLogin()
         time.sleep(2)
 
-    @classmethod
-    def tearDown(cls):
-        cls.page.quit()
+    def tearDown(self):
+        self.page.quit()
 
     def test_01_PulsaSuccess(self):
         num = random.randint(10000, 99999)
@@ -46,8 +44,9 @@ class CheckPhone(unittest.TestCase):
         self.target = tool.save_picture(src=self.src_big, name='src_big.jpg')
         self.template = tool.save_picture(src=self.src_small, name='src_small.jpg')
         self.distance = tool.findpic(target=self.target, template=self.template)
-        self.page.d.move_by_distance('xpath=>//aside/div/div/div/div[2]/div[2]/div[3]', self.distance,times=3)
-        self.assertTrue(self.page.checkNomorTeleponSalah(self.test_01_PulsaSuccess.__name__))
+        self.page.d.move_by_distance('xpath=>//aside/div/div/div/div[2]/div[2]/div[3]', self.distance, times=3)
+        self.assertTrue(self.page.checkSuccess(self.test_01_PulsaSuccess.__name__))
+
 
 if __name__ == '__main__':
     unittest.main()

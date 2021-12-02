@@ -6,10 +6,12 @@ from lib.HTMLTestRunner import HTMLTestRunner
 
 
 class Main(object):
+    def __init__(self):
+        tool.clear_picture()
+
     def run(self):
         suite = unittest.TestSuite()
         cases = unittest.defaultTestLoader.discover(CASEPATH)
-        tool.clear_picture()
         for case in cases:
             suite.addTest(case)
         f =open(REPORTPATH,'wb')

@@ -200,9 +200,9 @@ function showOutput(id, name) {
 
 <div class='page-header' style='margin-top: 15px;'>
 <h1>测试报告</h1>
-<p class='attribute'><strong>开始时间:</strong> 2021-12-01 13:31:26</p>
-<p class='attribute'><strong>运行时长:</strong> 0:00:57.319216</p>
-<p class='attribute'><strong>状态:</strong> 通过 2 错误 1</p>
+<p class='attribute'><strong>开始时间:</strong> 2021-12-01 19:00:12</p>
+<p class='attribute'><strong>运行时长:</strong> 0:01:03.054499</p>
+<p class='attribute'><strong>状态:</strong> 通过 1 失败 1 错误 1</p>
 
 </div>
 <p class='description'>用例执行情况：</p>
@@ -256,37 +256,18 @@ function showOutput(id, name) {
            [x]</a>
         </div>
         
-ft1.1: Traceback (most recent call last):
-  File "/Users/fengbo.zhu/Desktop/pyProject/UiEntryTask/case/test_PulsaSuccess.py", line 49, in test_01_PulsaSuccess
-    self.page.d.move_by_distance('xpath=&gt;//aside/div/div/div/div[2]/div[2]/div[3]', self.distance,times=3)
-  File "/Users/fengbo.zhu/Desktop/pyProject/UiEntryTask/lib/pyse.py", line 420, in move_by_distance
-    action.click_and_hold(el).perform()
-  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/selenium/webdriver/common/action_chains.py", line 80, in perform
-    action()
-  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/selenium/webdriver/common/action_chains.py", line 285, in &lt;lambda&gt;
-    self._actions.append(lambda: self._driver.execute(
-  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 238, in execute
-    self.error_handler.check_response(response)
-  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/selenium/webdriver/remote/errorhandler.py", line 193, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.StaleElementReferenceException: Message: stale element reference: element is not attached to the page document
-  (Session info: chrome=96.0.4664.55)
-  (Driver info: chromedriver=96.0.4664.45 (76e4c1bb2ab4671b8beba3444e61c0f17584b2fc-refs/branch-heads/4664@{#947}),platform=Mac OS X 11.3.1 x86_64)
-
-
-
-<a href="#" onclick="window.open('picture/','','WIDTH=1034,height=619 TOP=0 left=200')"><IMG SRC=picture/ style="width: 390px;height: 200px;position: absolute;top: 10px;left: 135px"></a>
+<a href="#" onclick="window.open('picture/test_01_PulsaSuccess.jpg','','WIDTH=1034,height=619 TOP=0 left=200')"><IMG SRC=picture/test_01_PulsaSuccess.jpg style="width: 390px;height: 200px;position: absolute;top: 10px;left: 135px"></a>
     </div>
     <!--css div popup end-->
 
     </td>
 </tr>
 
-<tr class='passClass'>
+<tr class='failClass'>
     <td>test_checkInputPhone.CheckPhone</td>
     <td>2</td>
-    <td>2</td>
-    <td>0</td>
+    <td>1</td>
+    <td>1</td>
     <td>0</td>
     <td><a href="javascript:showClassDetail('c2',2)">详情</a></td>
 </tr>
@@ -296,16 +277,32 @@ selenium.common.exceptions.StaleElementReferenceException: Message: stale elemen
     <td colspan='5' align='center'>通过</td>
 </tr>
 
-<tr id='pt2.2' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_02_11Telepon</div></td>
-    <td colspan='5' align='center'>通过</td>
+<tr id='ft2.2' class='none'>
+    <td class='failCase'><div class='testcase'>test_02_11Telepon</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.2')" >
+        失败</a>
+
+    <div id='div_ft2.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer;height: 200px;position: relative;'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        
+<a href="#" onclick="window.open('picture/test_02_11Telepon.jpg','','WIDTH=1034,height=619 TOP=0 left=200')"><IMG SRC=picture/test_02_11Telepon.jpg style="width: 390px;height: 200px;position: absolute;top: 10px;left: 135px"></a>
+    </div>
+    <!--css div popup end-->
+
+    </td>
 </tr>
 
 <tr id='total_row'>
     <td>总计</td>
     <td>3</td>
-    <td>2</td>
-    <td>0</td>
+    <td>1</td>
+    <td>1</td>
     <td>1</td>
     <td>&nbsp;</td>
 </tr>

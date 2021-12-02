@@ -40,6 +40,10 @@ class Checkout(Pulsa):
         el = 'xpath=>//div[text()="Verifikasi"]/../../div[2]/*/img'
         return self.d.get_attribute(el, attribute='src')
 
+    def checkSuccess(self, name):
+        el = 'xpath=>//span[text()="Checkout1"]'
+        return self.d.wait_and_save_exception(el, name)
+
 
 if __name__ == '__main__':
     page = Checkout()
@@ -71,7 +75,7 @@ if __name__ == '__main__':
     target = tool.save_picture(src=src_big, name='src_big.jpg')
     template = tool.save_picture(src=src_small, name='src_small.jpg')
     distance = tool.findpic(target=target, template=template)
-    page.d.move_by_distance('xpath=>//aside/div/div/div/div[2]/div[2]/div[3]', distance,times=3)
+    page.d.move_by_distance('xpath=>//aside/div/div/div/div[2]/div[2]/div[3]', distance, times=3)
     time.sleep(2)
     page.d.F5()
 
